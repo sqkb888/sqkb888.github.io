@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset=\"UTF-8\">
+<title>小高教学网简单实现打字效果</title>
+</head>
+ 
+<style type=\"text/css\">
+  #type{
+ 
+        width:300px;	/*这里修改文字长度*/
+        white-space:nowrap;
+        overflow:hidden;
+        -webkit-animation: dy 3s steps(60, end) infinite;
+        animation: dy 3s steps(50, end) infinite;
+    }
+    @-webkit-keyframes dy{
+        from { width: 0;}
+    }
+    @keyframes dy{
+        from { width: 0;}
+    }
+</style>
+ 
+<body>
+<p id=\"type\">小高教学网【www.xx8g.com】 </p>
+</body>
+</html>
